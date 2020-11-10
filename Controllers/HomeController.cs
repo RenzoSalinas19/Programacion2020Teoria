@@ -23,6 +23,27 @@ namespace Programacion2020Teoria.Controllers
             return View();
         }
 
+        public IActionResult Producto()
+        {
+            return View();
+        }
+
+        [HttpPost]
+            public IActionResult Producto(Producto producto)
+        {
+            if (ModelState.IsValid) 
+            {
+                return RedirectToAction("ConfirmacionProducto");
+            }
+            
+            return View(producto);
+        }
+
+        public IActionResult ConfirmacionProducto()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
